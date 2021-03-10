@@ -1,22 +1,42 @@
+
 const Engine = Matter.Engine;
-const World= Matter.World;
+const World = Matter.World;
 const Bodies = Matter.Bodies;
-const Constraint = Matter.Constraint;
+const Body = Matter.Body;
 
-var engine, world;
-var drops;
+var drops,maxDrops;
 
-function preload(){
-    
+function preload()
+{
+	
 }
 
-function setup(){
-    var canvas = createCanvas(1200,400);
-   
-    drops = new Drops(500,500);
+function setup() {
+	createCanvas(800, 700);
+
+
+	engine = Engine.create();
+	world = engine.world;
+
+	drops = new Drops(400,300);
+
+	//Create the Bodies Here.
+
+
+	Engine.run(engine);
+  
 }
 
-function draw(){
-    
-}   
+
+function draw() {
+  rectMode(CENTER);
+  background(0);
+
+  drops.display();
+  
+  drawSprites();
+ 
+}
+
+
 
